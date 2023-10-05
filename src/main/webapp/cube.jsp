@@ -6,7 +6,6 @@
 <meta charset="UTF-8">
 <title>cube.jsp</title>
 <style type="text/css">
-/* 큐브의 사이즈 줄이는법 : .bacs{width,height,line-height} */
 .perspective {
 /* 	border: 10px solid green; */
  	display: inline-block;
@@ -40,7 +39,7 @@
 	left: 0px;
 	
 	opacity: 0.3;
-	box-shadow: 0px 0px 40px 2px hotpink;
+	box-shadow: 0px 0px 100px 10px hotpink;
 }
 
 .front {
@@ -86,11 +85,13 @@
 		transform: rotateX(0deg) rotateY(360deg);
 	}
 }
-
+body {
+	height: 800px;
+}
 </style>
 </head>
 <body>
-<h1>CSS 3D 응용 큐브 (작게) 만들기</h1>
+<h1>CSS 3D 응용 큐브 만들기</h1>
 <hr>
 <section class="perspective">
 	<article class="cube">
