@@ -5,6 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>home.jsp</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito&family=Montserrat:ital,wght@1,300&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="media/favicon.png">
 <link rel="stylesheet" href="css/cube.css">
 <style type="text/css">
@@ -14,22 +18,30 @@
 	align-items: flex-start;		/* 	부모를 크기 정렬 기준으로 삼음 start(맨위 정렬) */
 	/* 	화면 고정 */
 	position: fixed;
-	width: 80%;
-	top: 10px;
-	left: 10px;
+	width: 100%;
+	height: 20px;
+	background-color:rgba(178,204,255,1);
+	top: 0px;
+	left: 0px;
+	padding: 40px;
 }
 .menu-item {
 /* 	min-width: 150px; */
+	margin-top: -10px;
 	width: 150px;
 	flex-shrink: 0;
-	background: orange;
+	background: rgba(178,204,255,1);
+	font-family: 'Gabarito', sans-serif;
+}
+.cube {
+	margin: -20px 40px 0px 0px;
 }
 .menu-item:hover > .menu-title {
-	text-shadow: 10px 10px 5px red;
+	 font-weight: bold;
+	 cursor: pointer;
 }
 .menu-item:hover > .sub-menu {
 	max-height: 500px;
-	
 	transition: max-height 2s;
 }
 .menu-item:last-child {
@@ -47,11 +59,11 @@
 }
 .menu-title {
 	padding: 10px;
-	font-size: 15px;
+	font-size: 17px;
 }
 .sub-menu-item > a {
 	padding: 10px;
-	font-size: 12px;
+	font-size: 14px;
 	display: block;
 	text-decoration: none;
 	color: black;

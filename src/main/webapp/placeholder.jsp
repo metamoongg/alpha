@@ -26,7 +26,7 @@
 });
 */
 $(function() {
-	for (let i = 0; i < 50; i++){
+	for (let i = 0; i < 10; i++){
 		$('body').append('<img alt="xxx"/>');				// 가상의 이미지 태그 10개 생성
 	}	
 //	$('img').attr('src', 'http://via.placeholder.com/100X100');
@@ -45,9 +45,12 @@ $(function() {
 							'00FFFF',
 							'FFFFFF',
 						]
-			
-			let fg = colors[parseInt(Math.random()*colors.length)];
-			let bg = colors[parseInt(Math.random()*colors.length)];
+// 			let fg = null;
+// 			let bg = null;
+// 			do{
+				let fg = colors[parseInt(Math.random()*colors.length)];
+				let bg = colors[parseInt(Math.random()*colors.length)];
+// 			} while (fg=!bg);
 			
 			let width = parseInt(Math.random()*10 + 1) * 10;
 			let height = parseInt(Math.random()*10 + 1) * 10;
