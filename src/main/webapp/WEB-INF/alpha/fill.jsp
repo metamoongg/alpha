@@ -1,31 +1,70 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>    
+<%@ taglib prefix="c" uri="jakarta.tags.core" %> 
+
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito&family=Montserrat:ital,wght@1,300&display=swap" rel="stylesheet">   
 <meta charset="UTF-8">
 <title>fill.jsp</title>
 <style type="text/css">
+body {
+	font-family: 'Gabarito', sans-serif;
+}
 #surface {
 	border-collapse: collapse;
 	font-family: monospace;
 	font-size: 2em;
- 	border-left: 20px solid red;
-	background: url('/media/alpha.png');
+	background: url('/media/sky.jpg');
+	background-size: cover;
 	background-repeat: no-repeat;
 }
 
 #surface td {
-	opacity: 0.5;
+	opacity: 0.4;
+}
+.btn, article, .table__count, .table__alpha {
+	display: flex;
+	justify-content: center;
+}
+.table__count {
+	margin: 20px;
+}
+#start ,#clear {
+	margin: 0px 10px;
+	padding: 10px 20px;
+	font-family: 'Gabarito', sans-serif;
+	border: none;
+	border-radius: 10px;
+	transition: 0.5s;
+}
+#start:hover {
+	background-color: rgba(178,204,255,1);
+}
+#clear:hover {
+	background-color: rgba(178,204,255,1);
+}
+.table__alpha {
+	margin-bottom: 50px;
 }
 
 </style>
 <script type="text/javascript">
+window.onload = function() {
+}
+
 function startBtn_click(e) {
-	console.log("startBtn...");
+// 	let btn1 = document.querySelector('#start');
+// 	console.log(btn1);
+// 	console.log("startBtn...");
+// 	btn1.style.color = "blue";
+// 	let btn1 = document.querySelector('#start');
 	start.disabled = true;
 	clear.disabled = true;
+//	document.querySelector('.btn').backgroundcolor = 'tomato';
 	
 	let timer = setInterval(function() {
 		seconds.innerText = ++seconds.innerText;
@@ -100,12 +139,15 @@ function clearBtn_click(e) {
 </script>
 </head>
 <body>
+<article>
 <h1>Spring MVC + XMLHttpRequest</h1>
-<hr>
+</article>
+<div class="btn">
 <button id="start" onclick="startBtn_click(event);">Start</button>
 <button id="clear" onclick="clearBtn_click(event);">Clear</button>
-<hr>
-<table border="1" width="500">
+</div>
+<div class="table__count">
+<table  border="1" width="500">
 	<thead>
 	<tr>
 		<th>forCount</th><th>count</th><th>seconds</th>
@@ -119,7 +161,8 @@ function clearBtn_click(e) {
 	</tr>	
 	</tbody>
 </table>
-<hr>
+</div>
+<div class="table__alpha">
 <table id="surface" onmousedown="event.preventDefault();" oncontextmenu="event.preventDefault();">
 	<tbody>
 	<c:forEach var="row" items="${surface}">
@@ -131,19 +174,19 @@ function clearBtn_click(e) {
 	</c:forEach>
 	</tbody>
 </table>
-<hr>
+</div>
 <!-- 전통적 For문 형태로 표면을 만들어 보세요  id="surface2" -->
-<table id="surface2">
-	<tbody>
-	<c:forEach var="i" begin="0" end="19">
-		<tr>
-		<c:forEach var="j" begin="0" end="39">
-			<c:set var="alpha" value="${surface[i][j]}"/>
-			<td>${alpha.ch}</td>
-		</c:forEach>
-		</tr>
-	</c:forEach>
-	</tbody>
-</table>
+<!-- <table id="surface2"> -->
+<!-- 	<tbody> -->
+<%-- 	<c:forEach var="i" begin="0" end="19"> --%>
+<!-- 		<tr> -->
+<%-- 		<c:forEach var="j" begin="0" end="39"> --%>
+<%-- 			<c:set var="alpha" value="${surface[i][j]}"/> --%>
+<%-- 			<td>${alpha.ch}</td> --%>
+<%-- 		</c:forEach> --%>
+<!-- 		</tr> -->
+<%-- 	</c:forEach> --%>
+<!-- 	</tbody> -->
+<!-- </table> -->
 </body>
 </html>

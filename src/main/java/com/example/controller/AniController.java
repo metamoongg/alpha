@@ -76,11 +76,11 @@ public class AniController {
 		model.addAttribute("surface", alphas);
 	}
 	
+	
 	@GetMapping("/data")
 	@ResponseBody	// REST API
 	Alpha data() {
 		return new Alpha();
 	}
-	
 
 }

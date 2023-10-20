@@ -2,6 +2,9 @@ module.exports = {
     mode: "development",
     entry: {
         fill: "./src/fill.jsx",
+        sort: "./src/sort.jsx",
+        move: "./src/move.jsx",
+        flow: "./src/flow.jsx",
      },
     output: {
         filename: "[name].js",
