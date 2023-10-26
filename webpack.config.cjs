@@ -5,6 +5,8 @@ module.exports = {
         sort: "./src/sort.jsx",
         move: "./src/move.jsx",
         flow: "./src/flow.jsx",
+        ping: "./src/ping.jsx",
+        dept: "./src/dept/App.jsx",
      },
     output: {
         filename: "[name].js",

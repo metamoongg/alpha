@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,6 +33,7 @@
 	flex-shrink: 0;
 	background: rgba(178,204,255,1);
 	font-family: 'Gabarito', sans-serif;
+	text-decoration: none;
 }
 .cube {
 	margin: -20px 40px 0px 0px;
@@ -44,9 +46,10 @@
 	max-height: 500px;
 	transition: max-height 2s;
 }
-.menu-item:last-child {
+.menu-item:nth-last-child(2) {
 	margin-left: auto;
-	margin-right: 10px; 
+	margin-right: 10px;
+	
 }
 .sub-menu {
 	max-height: 0px;
@@ -60,6 +63,7 @@
 .menu-title {
 	padding: 10px;
 	font-size: 17px;
+	
 }
 .sub-menu-item > a {
 	padding: 10px;
@@ -73,6 +77,10 @@
 }
 iframe {
 	margin-top: 100px;
+}
+a {
+	color: black;
+	text-decoration: none;
 }
 </style>
 <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
@@ -94,17 +102,17 @@ $(document).ready(function() {
 <nav>
 <ul class="menu">
 	<li style="padding: 0px 20px;">
-	<section class="perspective">
-	<article class="cube">
-		<div class="base">Alpha</div>
-		<div class="base front">A</div>
-		<div class="base back">B</div>
-		<div class="base left">C</div>
-		<div class="base right">D</div>
-		<div class="base top">E</div>
-		<div class="base bottom">F</div>
-	</article>
-	</section>
+		<section class="perspective">
+		<article class="cube">
+			<div class="base">Alpha</div>
+			<div class="base front">A</div>
+			<div class="base back">B</div>
+			<div class="base left">C</div>
+			<div class="base right">D</div>
+			<div class="base top">E</div>
+			<div class="base bottom">F</div>
+		</article>
+		</section>
 	</li>
 	<li class="menu-item">
 		<div class="menu-title">Alpha</div>
@@ -113,7 +121,7 @@ $(document).ready(function() {
 			<li class="sub-menu-item"><a target="content" href="/alpha/cross">cross</a></li>
 			<li class="sub-menu-item"><a target="content" href="/alpha/race">race</a></li>
 			<li class="sub-menu-item"><a target="content" href="/alpha/zigzag">zigzag</a></li>
-			<li class="sub-menu-item"><a target="content" href="/alpha/earthworm">earthworm</a></li>
+			<li class="sub-menu-item"><a target="content" href="/alpha/earthwrom">earthworm</a></li>
 		</ol>
 	</li>
 	<li class="menu-item">
@@ -122,41 +130,65 @@ $(document).ready(function() {
 			<li class="sub-menu-item"><a target="content" href="/ani/fill">fill</a></li>
 			<li class="sub-menu-item"><a target="content" href="/ani/cross">cross</a></li>
 			<li class="sub-menu-item"><a target="content" href="/ani/race">race</a></li>
-			<li class="sub-menu-item"><a target="content" href="cube.jsp">cube</a></li>
-			<li class="sub-menu-item"><a target="content" href="placeholder.jsp">placeholder</a></li>
+			<li class="sub-menu-item"><a target="content" href="/cube.jsp">cube</a></li>
+			<li class="sub-menu-item"><a target="content" href="/placeholder.jsp">placeholder</a></li>
 		</ol>
 	</li>
 	<li class="menu-item">
-	<div class="menu-title">React</div>
+		<div class="menu-title">React</div>
 		<ol class="sub-menu">
 			<li class="sub-menu-item"><a target="content" href="/fill.jsp">fill</a></li>
-			<li class="sub-menu-item"><a target="content" href="/cross.jsp">cross</a></li>
-			<li class="sub-menu-item"><a target="content" href="/race.jsp">race</a></li>
+			<li class="sub-menu-item"><a target="content" href="/sort.jsp">sort</a></li>
+			<li class="sub-menu-item"><a target="content" href="/move.jsp">move</a></li>
+			<li class="sub-menu-item"><a target="content" href="/flow.jsp">flow</a></li>
+			<li class="sub-menu-item"><a target="content" href="/ping.jsp">ping</a></li>
 		</ol>
 	</li>
 	<li class="menu-item">
-	<div class="menu-title">Employee</div>
+		<div class="menu-title">Employee</div>
 		<ol class="sub-menu">
 			<li class="sub-menu-item"><a target="content" href="/dept/list">dept</a></li>
-			<li class="sub-menu-item"><a target="content" href="/emp/list">cross</a></li>
+			<li class="sub-menu-item"><a target="content" href="/emp/list">emp</a></li>
 			<li class="sub-menu-item"><a target="content" href="/salgrade/list">salgrade</a></li>
 		</ol>
 	</li>
 	<li class="menu-item">
-	<div class="menu-title">City</div>
+		<div class="menu-title">City</div>
 		<ol class="sub-menu">
 			<li class="sub-menu-item"><a target="content" href="/city/list">city</a></li>
 			<li class="sub-menu-item"><a target="content" href="/country/list">country</a></li>
-			<li class="sub-menu-item"><a target="content" href="/language/list">country</a></li>
-			<li class="sub-menu-item"><a target="content" href="/city/search">search</a></li>
+			<li class="sub-menu-item"><a target="content" href="/language/list">language</a></li>
+			<li class="sub-menu-item"><a target="content" href="/search">search</a></li>
 		</ol>
 	</li>
+	<sec:authorize access="isAnonymous()">
 	<li class="menu-item">
-		<div class="menu-title">Login</div>
+		<div class="menu-title">
+		<a href="/login">Login</a>
+		</div>
 	</li>
+		<li class="menu-item">
+		<div class="menu-title">
+			<a href="/register">Register</a>
+		</div>
+	</li>
+	</sec:authorize>
+	<sec:authorize access="isAuthenticated()">
+	<li class="menu-item">
+		<div class="menu-title">
+			<a href="/logout">Logout</a>
+		</div>
+	</li>
+	<li class="menu-item">
+		<div class="menu-title">
+			<a href="#"><sec:authentication property="name"/></a>
+		</div>
+	</li>
+	</sec:authorize>
+	
 </ul>
 </nav>
-<iframe src="/alpha/cross" 
+<iframe src="/alpha/race" 
 		 name="content" 
 		 width="100%"
 		 scrolling="no"

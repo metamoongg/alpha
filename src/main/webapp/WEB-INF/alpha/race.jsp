@@ -6,25 +6,40 @@
 <head>
 <meta charset="UTF-8">
 <title>race.jsp</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito&family=Montserrat:ital,wght@1,300&display=swap" rel="stylesheet">
 <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
 <style type="text/css">
+body{
+	font-family: 'Gabarito', sans-serif;
+}
 #surface {
 	border-collapse: collapse;
 	font-family: monospace;
 	font-size: 1.5em;
 	background-color: red;
-	background-image: url('/img/BackgroundFront.png'), url('/img/BackgroundBack.png');
-	background-size: 100%;
+	background: url('/media/sky.jpg');
+	background-size: cover;
 	background-repeat: no-repeat;
 }
 
 #surface td {
-	opacity: 0.7;
+	opacity: 0.5;
 }
 
 #startBtn {
-	padding: 5px 10px;
+	margin: 0px 10px;
+	padding: 10px 20px;
+	font-family: 'Gabarito', sans-serif;
+	border: none;
+	border-radius: 10px;
+	transition: 0.5s;
 }
+#startBtn:hover {
+	background-color: rgba(178,204,255,1);
+}
+
 </style>
 <script type="text/javascript">
 
@@ -144,9 +159,13 @@ section > table {
 </style>
 </head>
 <body>
+<div class="center">
 <h1>Ajax => fetch 활용</h1>
+</div>
+<div class="center">
 <button id="startBtn">Start</button>
-<hr>
+</div>
+<div class="center">
 <table border="1" width="400">
 	<thead>
 		<tr>
@@ -161,8 +180,8 @@ section > table {
 		</tr>
 	</tbody>
 </table>
-<hr>
-<section>
+</div>
+<section class="center">
 <table id="stat" width="400" border="1">
 	<thead>
 		<tr>

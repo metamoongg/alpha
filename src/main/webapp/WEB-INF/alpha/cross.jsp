@@ -1,27 +1,52 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>    
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>  
+  
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>cross.jsp</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito&family=Montserrat:ital,wght@1,300&display=swap" rel="stylesheet"> 
 <style type="text/css">
 body {
-	background-image: url('/media/alpha.png'), url('/media/small.png');
+	font-family: 'Gabarito', sans-serif;
+	
 }
 
 #surface {
 	border-collapse: collapse;
 	font-family: monospace;
 	font-size: 150%;
-	
-	border: 10px outset red;
+	background: url('/media/sky.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 #surface td {
-	opacity: 0.9;
+	opacity: 0.5;
 }
+#createBtn {
+	margin: 0px 10px;
+	padding: 10px 20px;
+	font-family: 'Gabarito', sans-serif;
+	border: none;
+	border-radius: 10px;
+	transition: 0.5s;
+}
+#createBtn:hover {
+	background-color: rgba(178,204,255,1);
+}
+.center, article {
+	display: flex;
+	justify-content: center;
+}
+table {
+	margin-top: 20px;
+}
+
 
 </style>
 <script type="text/javascript">
@@ -104,12 +129,15 @@ window.onload = () => {
 </script>
 </head>
 <body>
+<article>
 <h1>async/await + class</h1>
-<hr>
+</article>
+<div class="center">
 <button id="createBtn">Create</button>
-<hr>
-<table id="surface" onmousedown="event.preventDefault();" oncontextmenu="event.preventDefault();">
-	<tbody>
+</div>
+<div class="center">
+<table id="surface"  onmousedown="event.preventDefault();" oncontextmenu="event.preventDefault();">
+	<tbody >
 	<c:forEach var="i" begin="0" end="${surface.size()-1}">
 		<tr>
 		<c:forEach var="alpha" items="${surface[i]}">
@@ -120,5 +148,6 @@ window.onload = () => {
 	</c:forEach>
 	</tbody>
 </table>
+</div>
 </body>
 </html>

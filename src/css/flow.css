@@ -13,11 +13,9 @@ body {
 }
 
 #surface td {
-	position: relative;
+	position: absolute;
 	
-	transition: left 2s, top 2s, transform 2s;
+	transition: left 100ms, top 100ms, transform 2s;
 }
-
-
 
 
