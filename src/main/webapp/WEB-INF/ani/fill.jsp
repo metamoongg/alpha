@@ -5,14 +5,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito&family=Montserrat:ital,wght@1,300&display=swap" rel="stylesheet">
 <title>fill.jsp</title>
 <style type="text/css">
+body {
+	font-family: 'Gabarito', sans-serif;
+	
+}
 #surface {
 	border-collapse: collapse;
 	font-family: monospace;
-	font-size: 1.5em;
- 	border-left: 20px solid red;
-	background: url('/media/alpha.png');
+	font-size: 150%;
+	background: url('/media/sky5.jpg');
+	background-size: cover;
 	background-repeat: no-repeat;
 	
 }
@@ -26,7 +33,24 @@
 	
 	transition: left 3s 500ms, transform 4s;
 }
-
+button {
+	margin: 0px 10px;
+	padding: 10px 20px;
+	font-family: 'Gabarito', sans-serif;
+	border: none;
+	border-radius: 10px;
+	transition: 0.5s;
+}
+button:hover {
+	background-color: rgba(178,204,255,1);
+}
+.center {
+	display: flex;
+	justify-content: center;
+}
+table {
+	margin-top: 20px;
+}
 </style>
 <script type="text/javascript">
 function startBtn_click(e) {
@@ -116,11 +140,14 @@ function clearBtn_click(e) {
 </script>
 </head>
 <body>
+<div class="center">
 <h1>Transition / Position</h1>
-<hr>
+</div>
+<div class="center">
 <button id="start" onclick="startBtn_click(event);">Start</button>
 <button id="clear" onclick="clearBtn_click(event);">Clear</button>
-<hr>
+</div>
+<div class="center">
 <table border="1" width="500">
 	<thead>
 	<tr>
@@ -135,7 +162,8 @@ function clearBtn_click(e) {
 	</tr>	
 	</tbody>
 </table>
-<hr>
+</div>
+<div class="center">
 <table id="surface" onmousedown="event.preventDefault();" oncontextmenu="event.preventDefault();">
 	<tbody>
 	<c:forEach var="row" items="${surface}">
@@ -147,6 +175,6 @@ function clearBtn_click(e) {
 	</c:forEach>
 	</tbody>
 </table>
-<hr>
+</div>
 </body>
 </html>

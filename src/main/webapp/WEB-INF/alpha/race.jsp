@@ -19,7 +19,7 @@ body{
 	font-family: monospace;
 	font-size: 1.5em;
 	background-color: red;
-	background: url('/media/sky.jpg');
+	background: url('/media/sky4.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -38,6 +38,13 @@ body{
 }
 #startBtn:hover {
 	background-color: rgba(178,204,255,1);
+}
+.center {
+	display: flex;
+	justify-content: center;
+}
+table {
+	margin-top: 25px;
 }
 
 </style>
@@ -181,7 +188,8 @@ section > table {
 	</tbody>
 </table>
 </div>
-<section class="center">
+<div class="center">
+<section>
 <table id="stat" width="400" border="1">
 	<thead>
 		<tr>
@@ -204,5 +212,6 @@ section > table {
 	</tbody>
 </table>
 </section>
+</div>
 </body>
 </html>

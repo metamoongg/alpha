@@ -18,7 +18,7 @@ body {
 	border-collapse: collapse;
 	font-family: monospace;
 	font-size: 2em;
-	background: url('/media/sky.jpg');
+	background: url('/media/sky3.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 }

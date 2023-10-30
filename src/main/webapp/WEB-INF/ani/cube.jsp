@@ -4,8 +4,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito&family=Montserrat:ital,wght@1,300&display=swap" rel="stylesheet"> 
 <title>cube.jsp</title>
 <style type="text/css">
+body {
+	font-family: 'Gabarito', sans-serif;
+	height: 1000px;
+}
+.center {
+	display: flex;
+	justify-content: center;
+}
 /* 큐브의 사이즈 줄이는법 : .bacs{width,height,line-height} */
 .perspective {
 /* 	border: 10px solid green; */
@@ -86,16 +97,14 @@
 		transform: rotateX(0deg) rotateY(360deg);
 	}
 }
-body {
-	height: 1000px;
-}
 
 </style>
 </head>
 <body>
+<div class="center">
 <h1>CSS 3D 응용 큐브 (작게) 만들기</h1>
-<hr>
-<section class="perspective">
+</div>
+<section class="center" class="perspective">
 	<article class="cube">
 		<div class="base">Base</div>
 		<div class="base front">Front</div>

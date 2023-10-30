@@ -4,12 +4,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito&family=Montserrat:ital,wght@1,300&display=swap" rel="stylesheet"> 
 <title>cube.jsp</title>
 <style type="text/css">
+body {
+	font-family: 'Gabarito', sans-serif;
+	height: 1000px;
+}
+.center {
+	display: flex;
+	justify-content: center;
+}
 .perspective {
 /* 	border: 10px solid green; */
  	display: inline-block;
-	margin: 100px 0px 0px 100px;
+	margin: 150px 0px 0px 0px;
 
 	perspective: 500px;		/* 보이는 관점 */
 }
@@ -85,14 +96,13 @@
 		transform: rotateX(0deg) rotateY(360deg);
 	}
 }
-body {
-	height: 800px;
-}
 </style>
 </head>
 <body>
-<h1>CSS 3D 응용 큐브 만들기</h1>
-<hr>
+<div class="center">
+<h1>CSS 3D 응용 큐브</h1>
+</div>
+<div class="center">
 <section class="perspective">
 	<article class="cube">
 		<div class="base">Base</div>
@@ -104,5 +114,6 @@ body {
 		<div class="base bottom">Bottom</div>
 	</article>
 </section>
+</div>
 </body>
 </html>

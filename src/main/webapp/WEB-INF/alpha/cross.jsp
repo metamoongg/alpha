@@ -20,13 +20,13 @@ body {
 	border-collapse: collapse;
 	font-family: monospace;
 	font-size: 150%;
-	background: url('/media/sky.jpg');
+	background: url('/media/sky2.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 
 #surface td {
-	opacity: 0.5;
+	opacity: 0.4;
 }
 #createBtn {
 	margin: 0px 10px;
